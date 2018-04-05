@@ -8,58 +8,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Place favicon.ico in the root directory -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 <script src="js/tone.js"></script>
 <script src="js/audiocontext.js"></script>
 <script type="text/javascript" src="https://unpkg.com/vexflow/releases/vexflow-min.js"></script>
-
 <script>
 
     $(function () {
 
         var synth = new Tone.Sampler({
-            'A0' : 'A0.[mp3|ogg]',
-            'C1' : 'C1.[mp3|ogg]',
-            'D#1' : 'Ds1.[mp3|ogg]',
-            'F#1' : 'Fs1.[mp3|ogg]',
-            'A1' : 'A1.[mp3|ogg]',
-            'C2' : 'C2.[mp3|ogg]',
-            'D#2' : 'Ds2.[mp3|ogg]',
-            'F#2' : 'Fs2.[mp3|ogg]',
-            'A2' : 'A2.[mp3|ogg]',
-            'C3' : 'C3.[mp3|ogg]',
-            'D#3' : 'Ds3.[mp3|ogg]',
-            'F#3' : 'Fs3.[mp3|ogg]',
-            'A3' : 'A3.[mp3|ogg]',
-            'C4' : 'C4.[mp3|ogg]',
-            'D#4' : 'Ds4.[mp3|ogg]',
-            'F#4' : 'Fs4.[mp3|ogg]',
-            'A4' : 'A4.[mp3|ogg]',
-            'C5' : 'C5.[mp3|ogg]',
-            'D#5' : 'Ds5.[mp3|ogg]',
-            'F#5' : 'Fs5.[mp3|ogg]',
-            'A5' : 'A5.[mp3|ogg]',
-            'C6' : 'C6.[mp3|ogg]',
-            'D#6' : 'Ds6.[mp3|ogg]',
-            'F#6' : 'Fs6.[mp3|ogg]',
-            'A6' : 'A6.[mp3|ogg]',
-            'C7' : 'C7.[mp3|ogg]',
-            'D#7' : 'Ds7.[mp3|ogg]',
-            'F#7' : 'Fs7.[mp3|ogg]',
-            'A7' : 'A7.[mp3|ogg]',
-            'C8' : 'C8.[mp3|ogg]'
+            'A0': 'A0.[mp3|ogg]',
+            'C1': 'C1.[mp3|ogg]',
+            'D#1': 'Ds1.[mp3|ogg]',
+            'F#1': 'Fs1.[mp3|ogg]',
+            'A1': 'A1.[mp3|ogg]',
+            'C2': 'C2.[mp3|ogg]',
+            'D#2': 'Ds2.[mp3|ogg]',
+            'F#2': 'Fs2.[mp3|ogg]',
+            'A2': 'A2.[mp3|ogg]',
+            'C3': 'C3.[mp3|ogg]',
+            'D#3': 'Ds3.[mp3|ogg]',
+            'F#3': 'Fs3.[mp3|ogg]',
+            'A3': 'A3.[mp3|ogg]',
+            'C4': 'C4.[mp3|ogg]',
+            'D#4': 'Ds4.[mp3|ogg]',
+            'F#4': 'Fs4.[mp3|ogg]',
+            'A4': 'A4.[mp3|ogg]',
+            'C5': 'C5.[mp3|ogg]',
+            'D#5': 'Ds5.[mp3|ogg]',
+            'F#5': 'Fs5.[mp3|ogg]',
+            'A5': 'A5.[mp3|ogg]',
+            'C6': 'C6.[mp3|ogg]',
+            'D#6': 'Ds6.[mp3|ogg]',
+            'F#6': 'Fs6.[mp3|ogg]',
+            'A6': 'A6.[mp3|ogg]',
+            'C7': 'C7.[mp3|ogg]',
+            'D#7': 'Ds7.[mp3|ogg]',
+            'F#7': 'Fs7.[mp3|ogg]',
+            'A7': 'A7.[mp3|ogg]',
+            'C8': 'C8.[mp3|ogg]'
         }, {
-            'release' : 1,
-            'baseUrl' : './audio/piano/'
+            'release': 1,
+            'baseUrl': './audio/piano/'
         }).toMaster();
 
         $("#notes").val('D5 D#5 D5 A#4 G4 A#4 D5 D#5 D5 A#4 F5 A#4 G4 A#4 D5 D#5 D5 G4 A#4 D5 D#5 D5');
@@ -67,9 +68,9 @@
 
         function trainMarkovChain(data) {
             const result = {};
-            for (let i=0 ; i<data.length - 1 ; i++) {
+            for (let i = 0; i < data.length - 1; i++) {
                 const from = data[i];
-                const to   = data[i + 1];
+                const to = data[i + 1];
                 result[from] = result[from] || [];
                 result[from].push(to);
             }
@@ -91,7 +92,7 @@
             return options[Math.floor(Math.random() * options.length)];
         }
 
-        $('#generatemusic').on('click', '#genmusicplay', function() {
+        $('#generatemusic').on('click', '#genmusicplay', function () {
             console.log('generuje....')
 
             var notes = [];
@@ -100,13 +101,11 @@
             var tmpkey = key;
             notes.push(tmpkey)
 
-            for (var i=0; i<10; i++){
-
+            for (var i = 0; i < 10; i++) {
                 key = predictWithMarkovChain(result, tmpkey);
                 console.log('Klucz ' + tmpkey + ' wartosc: ' + key)
                 notes.push(key);
                 tmpkey = key;
-
             }
 
             var time = 0;
@@ -124,10 +123,10 @@
             var i = 0;
             var putnotes = setInterval(function hello() {
                 console.log('world' + i);
-                $("#txtnotes").append(notes[i]+' ');
+                $("#txtnotes").append(notes[i] + ' ');
                 i++;
 
-                if(i >= notes.length){
+                if (i >= notes.length) {
                     clearInterval(putnotes)
                 }
 
@@ -143,7 +142,6 @@
             console.log(notes);
             result = trainMarkovChain(notes);
 
-
             const table = document.querySelector('table tbody');
 
             const keys = new Set();
@@ -156,20 +154,18 @@
                 return r;
             }, {})
 
-
             table.innerHTML = ''
-            table.innerHTML += '<tr><td></td>' + Array.from(keys).map(e => `<td>${e}</td>`).join('') +'<tr>';
+            table.innerHTML += '<tr><td></td>' + Array.from(keys).map(e => `<td>${e}</td>`).join('') + '<tr>';
             Object.keys(output).forEach(key => {
                 let data = `<td>${key}</td>`;
                 data += Array.from(keys, e => '<td>' + (output[key][e] ? output[key][e] : 0) + '</td>').join('')
                 table.innerHTML += `<tr>${data}</tr>`;
             })
 
-            var r= $('<button class="btn btn-primary mb-2" id="genmusicplay">Zagraj przykład</button>');
+            var r = $('<button class="btn btn-primary mb-2" id="genmusicplay">Zagraj przykład</button>');
             $("#generatemusic").html(r);
 
         });
-
 
         $("#play").click(function (event) {
             var notes = $("input[name=notes]").val().split(" ");
@@ -181,10 +177,7 @@
                 time += 1;
             })
         })
-
     })
-
-
 </script>
 </body>
 <style>
@@ -195,7 +188,8 @@
     table, th, td {
         border: 1px solid black;
     }
-    td{
+
+    td {
         width: 50px;
         height: 50px;
         text-align: center;
@@ -204,11 +198,13 @@
 </style>
 <div class="container">
 
-    <input type="text" class="form-control"  id="notes" name="notes">
+    <input type="text" class="form-control" id="notes" name="notes">
     <button value="Naucz" class="btn btn-primary mb-2" id="learn">Naucz</button>
     <button value="Naucz" class="btn btn-primary mb-2" id="play">Zagraj przykład</button>
     <div id="boo"></div>
-    <table><tbody></tbody></table>
+    <table>
+        <tbody></tbody>
+    </table>
     <div id="generatemusic"></div>
     <p id="txtnotes"></p>
 </div>
