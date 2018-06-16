@@ -1,4 +1,5 @@
 # Simple music with Markov Chain using Tone.js
+Live example: https://blog.lukaszogan.com/informatyka/algorytmiczne-generowanie-muzyki-poczatek-cyklu/#Interaktywny_przyklad
 
 Example:
 
